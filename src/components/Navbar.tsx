@@ -5,11 +5,17 @@ import type { ReactElement } from 'react';
 interface NavItemProps {
   href: string;
   title: string;
+  active?: boolean;
 }
 
-const NavItem = ({ href, title }: NavItemProps) => {
+const NavItem = ({ href, title, active = false }: NavItemProps) => {
   return (
-    <Link href={href} className="block p-2 text-gray-900">
+    <Link
+      href={href}
+      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base ${
+        active && 'active'
+      }`}
+    >
       {title}
     </Link>
   );
@@ -23,7 +29,11 @@ interface NavItemIconProps {
 
 const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
-    <Link href={href} className="block p-2 text-gray-900" aria-label={title}>
+    <Link
+      href={href}
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      aria-label={title}
+    >
       {icon}
     </Link>
   );
@@ -37,7 +47,7 @@ const Navbar = () => {
           <li className="hidden md:block">
             <Link
               href="/"
-              className="block h-9 px-2 text-2xl font-extrabold text-gray-900"
+              className="block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
             >
               Igmhar<span className="text-blue-400">dev</span>
             </Link>
@@ -73,7 +83,7 @@ const Navbar = () => {
             />
           </li>
           <li>
-            <div className="h-3 w-[1px] bg-slate-400"></div>
+            <div className="h-3 w-[1px] bg-slate-200"></div>
           </li>
           <li>
             <NavItemIcon

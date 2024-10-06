@@ -10,15 +10,15 @@ export default function SimpleSlider() {
   const techs = [
     {
       src: 'https://skillicons.dev/icons?i=svelte',
-      padding: 'p-10',
+      padding: 'p-9',
       name: 'Svelte',
       link: 'https://svelte.dev',
     },
     {
-      src: '',
+      src: 'https://skillicons.dev/icons?i=opencv',
       padding: 'p-9',
-      name: 'Android Studio',
-      link: 'https://developer.android.com',
+      name: 'OpenCV',
+      link: '',
     },
     {
       src: 'https://skillicons.dev/icons?i=tailwind',
@@ -46,13 +46,13 @@ export default function SimpleSlider() {
     },
     {
       src: 'https://skillicons.dev/icons?i=rust',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'Rust',
       link: 'https://www.rust-lang.org',
     },
     {
       src: 'https://skillicons.dev/icons?i=wasm',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'WASM',
       link: 'https://webassembly.org',
     },
@@ -82,55 +82,55 @@ export default function SimpleSlider() {
     },
     {
       src: 'https://skillicons.dev/icons?i=docker',
-      padding: 'p-4',
+      padding: 'p-9',
       name: 'Docker',
       link: 'https://docker.com',
     },
     {
       src: 'https://skillicons.dev/icons?i=git',
-      padding: 'p-4',
+      padding: 'p-9',
       name: 'Git',
       link: 'https://git-scm.com',
     },
     {
       src: 'https://skillicons.dev/icons?i=html',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'HTML',
       link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     },
     {
       src: 'https://skillicons.dev/icons?i=css',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'CSS',
       link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
     },
     {
       src: 'https://skillicons.dev/icons?i=js',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'JS',
       link: 'https://javascript.com',
     },
     {
       src: 'https://skillicons.dev/icons?i=ts',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'TS',
       link: 'https://typescriptlang.org',
     },
     {
       src: 'https://skillicons.dev/icons?i=postgres',
-      padding: 'p-4',
+      padding: 'p-9',
       name: 'MySQL',
       link: 'https://mysql.com',
     },
     {
       src: 'https://skillicons.dev/icons?i=ros',
-      padding: 'p-4',
+      padding: 'p-9',
       name: 'Nginx',
       link: 'https://nginx.org/en/',
     },
     {
       src: 'https://skillicons.dev/icons?i=nodejs',
-      padding: 'p-8',
+      padding: 'p-9',
       name: 'Node',
       link: 'https://nodejs.org/en/',
     },
@@ -169,7 +169,7 @@ export default function SimpleSlider() {
     ],
   };
   return (
-    <Slider {...settings} className="mx-6 w-full -mt-2">
+    <Slider {...settings} className="mx-6 max-w-5xl w-full -mt-2">
       {techs.map((tech) => (
         <TechIcon
           key={tech.name}

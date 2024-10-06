@@ -21,7 +21,7 @@ const Footer = () => {
         </ul>
       </section>
       <section className="mb-2">
-        <ul className="flex justify-center gap-1 text-xs">
+        <ul className="flex justify-center gap-1 text-xs text-gray-500">
           <li>
             <Link href="/" className="hover:underline">
               Holaa
@@ -35,7 +35,7 @@ const Footer = () => {
           </li>
         </ul>
       </section>
-      <small className="flex justify-center font-semibold">
+      <small className="flex justify-center text-sm font-semibold">
         &copy; 2024, Igmhar Sánchez
       </small>
     </footer>
