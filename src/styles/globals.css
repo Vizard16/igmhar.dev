@@ -10,17 +10,60 @@
   }
 
   html {
-    @apply bg-white text-gray-800 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
-  }
-  .button,
-  .button-outlined {
-    @apply inline-block rounded-md bg-blue-800 py-2.5 px-4 text-center text-sm font-bold uppercase text-white hover:bg-blue-900;
+    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
   }
 
-  .button-outlined {
-    @apply bg-transparent text-blue-700 hover:bg-transparent hover:text-blue-950;
+  .animate-fade-in {
+    transform: translate3d(0, -2.5rem, 0);
+    opacity: 0;
   }
+
+  .animate-fade-left {
+    transform: translate3d(-1.5rem, 0, 0);
+    opacity: 0;
+  }
+
+  :focus-visible {
+    @apply relative rounded-md bg-primary-50/20 outline-2 outline-offset-2 outline-primary-200;
+  }
+}
+
+@layer components {
   .content-wrapper {
-    @apply mx-auto max-w-[1280px] px-4 md:px-6;
+    @apply mx-auto max-w-[1280px] px-4 md:px-6 lg:px-16 xl:px-6;
+  }
+
+  .button {
+    @apply inline-block rounded-md py-2 px-4 text-center text-sm font-bold uppercase transition duration-150;
+
+    &--solid {
+      @apply border-blue-300 bg-blue-600 text-white hover:bg-blue-500;
+    }
+
+    &--outlined {
+      @apply text-blue-400 hover:text-blue-600;
+    }
+
+    &--big {
+      @apply rounded-lg py-3 px-6;
+    }
+  }
+
+  .link {
+    @apply relative;
+
+    &::after {
+      @apply absolute bottom-2 left-0 right-0 z-[-1] mx-auto h-2 w-[60%] origin-bottom scale-y-0 bg-blue-50 transition duration-200 ease-out content-[''];
+    }
+
+    /* active and hover state */
+    &.active,
+    &:hover {
+      @apply text-blue-500;
+
+      &::after {
+        @apply scale-y-100;
+      }
+    }
   }
 }
