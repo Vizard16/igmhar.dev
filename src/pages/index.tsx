@@ -5,16 +5,6 @@ import type { NextPage } from 'next';
 import TechSlider from '@/components/TechSlider';
 import Image from 'next/image';
 
-// import {
-//   TypeScriptIcon,
-//   ReactIcon,
-//   TailwindCssIcon,
-//   NextJsIcon,
-//   FigmaIcon,
-//   InkscapeIcon,
-//   PythonIcon,
-// } from '@/components/Icons';
-
 const Index: NextPage = () => {
   return (
     <>
