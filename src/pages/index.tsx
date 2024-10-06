@@ -37,28 +37,28 @@ const Index: NextPage = () => {
       </Head>
       <header className="relative border-b border-b-slate-100 pt-28 pb-20 lg:pt-36 lg:pb-28">
         <div
-          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200"
+          className="absolute inset-0 z-[-1] bg-slate-100 bg-grid-slate-200 lg:bg-grid-big-slate-200/40"
           style={{
             maskImage: 'radial-gradient(black, transparent)',
             WebkitMaskImage: 'radial-gradient(black, transparent)',
           }}
         ></div>
-        <div className="content-wrapper bg-animation-fade-in">
+        <div className="content-wrapper">
           <div className="relative">
             {/* title */}
             <h1 className="text-[#333333]">
-              <span className="mb-3 block animate-fade-in text-5xl font-bold md:mb-4 md:text-7xl">
+              <span className="mb-3 block animate-fade-left text-5xl font-bold md:mb-4 md:text-7xl">
                 Hello! I am{' '}
                 <strong className="font-extrabold text-gray-900">Igmhar</strong>
                 ,
               </span>
-              <span className="block animate-fade-in text-xl animation-delay-100 md:text-2xl">
+              <span className="block animate-fade-left text-xl animation-delay-100 md:text-2xl">
                 Jr. <strong>Software</strong> <strong>Developer</strong> and{' '}
                 <strong>Mechatronics Engineer</strong>
               </span>
             </h1>
             {/* cta */}
-            <div className="mt-8 flex animate-fade-in gap-2 animation-delay-100">
+            <div className="mt-8 flex animate-fade-left gap-2 animation-delay-100">
               <Link
                 href="/"
                 className="button button--solid button--big min-w-[128px]"
