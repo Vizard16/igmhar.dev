@@ -5,12 +5,22 @@
 @layer base {
   html,
   body,
-  #__next,
-  #__next-layout {
+  #__next {
     @apply h-full;
   }
 
   html {
-    @apply bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
+    @apply bg-white text-gray-800 dark:bg-slate-900 dark:text-slate-200 dark:[color-scheme:dark];
+  }
+  .button,
+  .button-outlined {
+    @apply inline-block rounded-md bg-blue-800 py-2.5 px-4 text-center text-sm font-bold uppercase text-white hover:bg-blue-900;
+  }
+
+  .button-outlined {
+    @apply bg-transparent text-blue-700 hover:bg-transparent hover:text-blue-950;
+  }
+  .content-wrapper {
+    @apply mx-auto max-w-[1280px] px-4 md:px-6;
   }
 }
