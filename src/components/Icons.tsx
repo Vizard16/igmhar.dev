@@ -44,7 +44,7 @@ export const SparklesIcon = (props: ComponentProps<'svg'>) => {
   );
 };
 
-export const HeartIcon = (props: ComponentProps<'svg'>) => {
+export const CodeIcon = (props: ComponentProps<'svg'>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,11 @@ export const HeartIcon = (props: ComponentProps<'svg'>) => {
       fill="currentColor"
       {...props}
     >
-      <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 01-1.162-.682 22.045 22.045 0 01-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 018-2.828A4.5 4.5 0 0118 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 01-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 01-.69.001l-.002-.001z" />
+      <path
+        fillRule="evenodd"
+        d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z"
+        clipRule="evenodd"
+      />
     </svg>
   );
 };
