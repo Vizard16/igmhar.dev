@@ -12,8 +12,11 @@
   "dependencies": {
     "@headlessui/tailwindcss": "^0.2.1",
     "@next/font": "14.2.14",
+    "@octokit/rest": "^21.0.2",
+    "dayjs": "^1.11.13",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.13",
+    "next-themes": "^0.3.0",
     "postcss-nesting": "^13.0.0",
     "react": "^18",
     "react-dom": "^18",
