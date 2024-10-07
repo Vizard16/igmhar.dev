@@ -8,6 +8,7 @@ import {
   TwitterIcon,
 } from '@/components/Icons';
 import type { ReactElement } from 'react';
+import Logo from '@/components/Logo';
 
 interface NavItemProps {
   href: string;
@@ -57,7 +58,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
+      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-100 text-gray-900 hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
       aria-label="Toggle Theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
@@ -74,27 +75,27 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-800 dark:bg-slate-900 md:px-4">
       <div>
-        <ul className="flex items-center font-semibold md:gap-2">
-          <li className="hidden md:block">
+        <ul className="flex items-center font-semibold md:gap-1">
+          <li>
             <Link
               href="/"
-              className="link block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              className="md:link flex h-9 items-center gap-2 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              aria-label="Home"
             >
-              <span className="text-gray-800 dark:text-slate-200">Igmhar</span>
-              <span className="text-blue-400">dev</span>
+              <Logo />
             </Link>
           </li>
           <li className="md:hidden">
             <NavItem href="/" title="home" />
           </li>
           <li>
-            <NavItem href="/" title="blog" />
+            <NavItem href="/blog" title="Blog" />
           </li>
           <li>
-            <NavItem href="/projects" title="projects" />
+            <NavItem href="/projects" title="Projects" />
           </li>
           <li>
-            <NavItem href="/" title="about" />
+            <NavItem href="/about" title="About" />
           </li>
         </ul>
       </div>
@@ -117,7 +118,7 @@ const Navbar = () => {
           <li>
             <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
           </li>
-          <li>
+          <li className="mx-2">
             <ThemeToggle />
           </li>
         </ul>
