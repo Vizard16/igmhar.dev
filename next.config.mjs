@@ -1,4 +1,5 @@
 const isDevelopment = process.env.NODE_ENV === 'development';
+import BundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,4 +11,7 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-export default nextConfig;
+const withBundleAnalyzer = BundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+export default withBundleAnalyzer(nextConfig);

@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:style": "prettier --check ."
+    "lint:style": "prettier --check .",
+    "analyze": "cross-env BUNDLE_ANALYZE=true next build"
   },
   "dependencies": {
     "@headlessui/tailwindcss": "^0.2.1",
+    "@next/bundle-analyzer": "^14.2.14",
     "@next/font": "14.2.14",
     "@octokit/rest": "^21.0.2",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.13",
@@ -24,6 +27,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/next": "^9.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
