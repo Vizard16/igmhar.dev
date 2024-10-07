@@ -5,11 +5,17 @@ const LastCommit = () => {
   const { commit, isError } = useLastCommit();
 
   return commit && !isError ? (
-    <a href={commit.url} target="_blank" rel="noreferrer">
-      this site has been updated {dayjs(commit.date).fromNow()}.
+    <a
+      href={commit.url}
+      target="_blank"
+      rel="noreferrer"
+      className="animate-fade-in hover:underline"
+    >
+      <span className="hidden sm:inline">this site has been </span>
+      <span>updated {dayjs(commit.date).fromNow()}.</span>
     </a>
   ) : (
-    <div>&nbsp;</div>
+    <span>&nbsp;</span>
   );
 };
 
