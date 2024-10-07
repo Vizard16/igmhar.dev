@@ -1,5 +1,12 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { GitHubIcon, LightIcon, TwitterIcon } from '@/components/Icons';
+import { useTheme } from 'next-themes';
+import {
+  DarkIcon,
+  GitHubIcon,
+  LightIcon,
+  TwitterIcon,
+} from '@/components/Icons';
 import type { ReactElement } from 'react';
 
 interface NavItemProps {
@@ -12,7 +19,7 @@ const NavItem = ({ href, title, active = false }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 md:text-base ${
+      className={`link flex h-9 items-center rounded-lg px-2 text-gray-900 dark:text-slate-200 ${
         active && 'active'
       }`}
     >
@@ -29,27 +36,52 @@ interface NavItemIconProps {
 
 const NavItemIcon = ({ href, icon, title }: NavItemIconProps) => {
   return (
-    <Link
+    <a
       href={href}
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900"
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
       aria-label={title}
+      target="_blank"
+      rel="noreferrer"
     >
       {icon}
-    </Link>
+    </a>
+  );
+};
+const ThemeToggle = () => {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <button
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-900 dark:text-slate-200"
+      aria-label="Toggle Theme"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      {mounted && resolvedTheme === 'dark' ? (
+        <LightIcon className="h-5 w-5" />
+      ) : (
+        <DarkIcon className="h-5 w-5" />
+      )}
+    </button>
   );
 };
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between border-b border-slate-100 py-6 px-2 text-sm md:px-4">
+    <nav className="flex items-center justify-between border-b border-slate-100 bg-white py-4 px-2 text-sm dark:border-slate-800 dark:bg-slate-900 md:px-4">
       <div>
-        <ul className="flex items-center font-semibold">
+        <ul className="flex items-center font-semibold md:gap-2">
           <li className="hidden md:block">
             <Link
               href="/"
-              className="block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
+              className="link block h-9 rounded-lg px-2 text-2xl font-extrabold text-gray-900"
             >
-              Igmhar<span className="text-blue-400">dev</span>
+              <span className="text-gray-800 dark:text-slate-200">Igmhar</span>
+              <span className="text-blue-400">dev</span>
             </Link>
           </li>
           <li className="md:hidden">
@@ -70,27 +102,23 @@ const Navbar = () => {
         <ul className="flex items-center gap-2">
           <li>
             <NavItemIcon
-              href="/"
+              href="https://twitter.com/enjidev"
               icon={<TwitterIcon className="h-5 w-5" />}
               title="Twitter"
             />
           </li>
           <li className="hidden sm:block">
             <NavItemIcon
-              href="/"
+              href="https://github.com/Vizard16"
               icon={<GitHubIcon className="h-5 w-5" />}
               title="GitHub"
             />
           </li>
           <li>
-            <div className="h-3 w-[1px] bg-slate-200"></div>
+            <div className="h-3 w-[1px] bg-slate-200 dark:bg-slate-700"></div>
           </li>
           <li>
-            <NavItemIcon
-              href="/"
-              icon={<LightIcon className="h-5 w-5" />}
-              title="Toggle Dark Mode"
-            />
+            <ThemeToggle />
           </li>
         </ul>
       </div>
