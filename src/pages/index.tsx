@@ -5,7 +5,7 @@ import Quote from '@/components/Quote';
 import FeaturedCard from '@/components/FeaturedCard';
 
 import { SparklesIcon, CodeIcon, BoltIcon } from '@/components/Icons';
-import Header from '@/components/Header';
+import Header from '@/components/Header/index';
 
 const Index: NextPage = () => {
   return (
