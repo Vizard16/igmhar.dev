@@ -17,6 +17,7 @@
     "@octokit/rest": "^21.0.2",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
+    "framer-motion": "^11.11.1",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.13",
     "next-themes": "^0.3.0",
